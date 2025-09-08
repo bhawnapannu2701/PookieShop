@@ -1,0 +1,79 @@
+/* --------- Base cozy theme --------- */
+:root{
+  --cream:#FFF7F1;
+  --card:#ffffff;
+  --border:#f2efe9;
+  --peach:#ffd8c7;
+  --peach-strong:#ffbda1;
+  --text:#2d2a26;
+  --muted:#6c6058;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --radius:20px;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color:var(--text);
+  background: radial-gradient(1200px 400px at 50% -100px, #ffeadd, rgba(255,255,255,0)) fixed, var(--cream);
+}
+
+/* --------- Navbar --------- */
+.navbar{
+  position: sticky; top:0; z-index: 50;
+  display:flex; justify-content:space-between; align-items:center;
+  gap:12px; padding:12px 18px; margin:12px auto; max-width:1200px;
+  background:#fff9f4; border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow);
+}
+.brandlink{ text-decoration:none; font-weight:900; color:#333; background:#ffe0d1; padding:8px 12px; border-radius:999px; }
+.nav{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.navlink{
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  background:#fff; border:1px solid var(--border); color:#333; font-weight:700;
+  padding:8px 12px; border-radius:999px; text-decoration:none; cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,.05);
+}
+.navlink.active{ background:#ffe8dd; }
+.btn{
+  background:linear-gradient(180deg, var(--peach), var(--peach-strong));
+  color:#492d23; border:0; border-radius:16px; padding:10px 14px; font-weight:800; cursor:pointer;
+  box-shadow:0 8px 18px rgba(255,149,110,.35);
+}
+
+/* --------- Layout --------- */
+.page{ max-width:1200px; margin:18px auto 60px; padding:0 16px; }
+h1{ margin: 0 0 12px 0; }
+.card-grid{
+  display:grid; gap:16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.card .info{ padding:12px; }
+.price{ font-weight:800; }
+
+/* --------- Skeletons --------- */
+.skeleton{
+  width:100%; height:200px; border-radius:16px;
+  background: linear-gradient(90deg, #f5efe8 25%, #f3ece5 37%, #f5efe8 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+@keyframes shimmer{
+  0%{ background-position:100% 0 }
+  100%{ background-position:0 0 }
+}
+
+/* --------- Lazy image polish --------- */
+.lazy-wrap{ position:relative; overflow:hidden; }
+.img{ transition: filter .35s ease, opacity .35s ease; display:block; }
+.img-blur{ filter: blur(12px); opacity:.6; }
+.img-ready{ filter:none; opacity:1; }
+
+/* --------- Inputs --------- */
+input, select, textarea{
+  font:inherit;
+}

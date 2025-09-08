@@ -1,0 +1,20 @@
+# --- Node / Vite ---
+client/node_modules
+client/.vite
+client/dist
+
+# --- Java / Maven ---
+server/target
+server/.mvn/
+server/mvnw
+server/mvnw.cmd
+
+# --- Env & IDE ---
+client/.env.local
+*.iml
+.idea/
+.vscode/
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
