@@ -1,4 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8080";
+// Use build-time env on Render. Falls back to local dev.
+const API_BASE = (import.meta.env.VITE_API_BASE || "http://localhost:8080").replace(/\/+$/, "");
 
 /* ---------- Products ---------- */
 export async function getProducts(page = 0, size = 12) {
