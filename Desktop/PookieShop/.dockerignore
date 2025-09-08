@@ -1,0 +1,6 @@
+client/
+**/target/
+**/node_modules/
+.git
+.gitignore
+*.cmd
