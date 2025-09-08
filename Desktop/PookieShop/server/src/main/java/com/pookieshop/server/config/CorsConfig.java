@@ -1,43 +1,33 @@
 package com.pookieshop.server.config;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Arrays;
-import java.util.List;
 
 @Configuration
-public class CorsConfig {
+public class CorsConfig implements WebMvcConfigurer {
 
-  // Render UI me env var set karoge: CORS_ALLOWED_ORIGINS=https://<your-vercel>.vercel.app
+  // Render → Settings → Environment: CORS_ALLOWED_ORIGINS=https://<your-vercel>.vercel.app
   @Value("${CORS_ALLOWED_ORIGINS:*}")
   private String allowed;
 
-  @Bean
-  CorsConfigurationSource corsConfigurationSource() {
-    CorsConfiguration cfg = new CorsConfiguration();
+  @Override
+  public void addCorsMappings(CorsRegistry registry) {
+    var reg = registry.addMapping("/**")
+        .allowedMethods("*")
+        .allowedHeaders("*");
 
-    // comma-separated origins ko list me convert
-    List<String> origins = Arrays.stream(allowed.split(","))
-        .map(String::trim).filter(s -> !s.isEmpty()).toList();
-
-    if (origins.size() == 1 && origins.get(0).equals("*")) {
-      // wildcard for testing; prod me exact domain do
-      cfg.addAllowedOriginPattern("*");
+    String trimmed = allowed == null ? "*" : allowed.trim();
+    if ("*".equals(trimmed)) {
+      // allow all (testing); tighten later to your exact domain
+      reg.allowedOriginPatterns("*");
     } else {
-      cfg.setAllowedOrigins(origins);
+      String[] origins = Arrays.stream(trimmed.split(","))
+          .map(String::trim).filter(s -> !s.isEmpty()).toArray(String[]::new);
+      reg.allowedOrigins(origins);
     }
-
-    cfg.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
-    cfg.setAllowedHeaders(List.of("*"));
-    cfg.setAllowCredentials(false);
-
-    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-    source.registerCorsConfiguration("/**", cfg);
-    return source;
   }
 }
