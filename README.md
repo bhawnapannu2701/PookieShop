@@ -1,8 +1,4 @@
 <p align="center">
-  <img src="https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif" width="180" alt="Teddy Bear" />
-</p>
-
-<p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?size=28&duration=4000&pause=800&color=F4A7BB&center=true&vCenter=true&width=700&lines=Hi+%F0%9F%91%8B+Welcome+to+PookieShop;A+Cozy+E-commerce+Platform;Made+with+%F0%9F%A7%B8+by+Bhawna" />
 </p>
 
@@ -40,11 +36,6 @@ Made with ❤️ by **Bhawna**
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,nodejs,mongodb,express,tailwind,git,github,vscode" />
 </p>
-
----
-
-## 🎥 Demo Video  
-[▶ Click here to watch the full demo](demo.mp4)  
 
 ---
 
