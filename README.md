@@ -1,38 +1,26 @@
-# ✨ PookieShop – Aesthetic E-commerce Platform  
+<p align="center">
+  <img src="https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif" width="180" alt="Teddy Bear" />
+</p>
 
 <p align="center">
-  <img src="demo.mp4" width="750" alt="Live Demo" />
+  <img src="https://readme-typing-svg.herokuapp.com?size=28&duration=4000&pause=800&color=F4A7BB&center=true&vCenter=true&width=700&lines=Hi+%F0%9F%91%8B+Welcome+to+PookieShop;A+Cozy+E-commerce+Platform;Made+with+%F0%9F%A7%B8+by+Bhawna" />
 </p>
 
 ---
 
-## 💖 About  
-🛍️ A modern and aesthetic e-commerce platform with smooth UI/UX.  
-🎨 Cute design, fast experience, and built with love.  
-⚡ Tech-focused on performance and clean architecture.  
+## 🧸 About  
+✨ A **cozy & aesthetic** e-commerce platform designed with love.  
+🧺 Inspired by warm teddy bear vibes 🐻✨  
+⚡ Smooth shopping experience with a cute touch.  
 
 ---
 
 ## 🌟 Features  
-- 🎀 Beautiful & responsive design  
+- 🐻 Soft & cozy UI/UX  
 - 🛒 Product browsing with filters  
 - 💖 Wishlist + Cart management  
-- 🔑 Secure authentication (Login/Signup)  
-- 🚀 Fast and lightweight experience  
-
----
-
-## 🛠️ Tech Stack  
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=react,nodejs,mongodb,express,tailwind,git,github,vscode" />
-</p>
-
----
-
-## 🎥 Demo  
-<p align="center">
-  <img src="demo.gif" width="700" alt="Demo Video" />
-</p>
+- 🔑 Secure Login/Signup  
+- 🎀 Cute animations  
 
 ---
 ---
@@ -47,6 +35,18 @@
 
 Made with ❤️ by **Bhawna**
 
+
+## 🛠️ Tech Stack  
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=react,nodejs,mongodb,express,tailwind,git,github,vscode" />
+</p>
+
+---
+
+## 🎥 Demo Video  
+[▶ Click here to watch the full demo](demo.mp4)  
+
+---
 
 ## ⚡ Installation  
 ```bash
