@@ -1,32 +1,40 @@
-# 🛍️ PookieShop – Cute Myntra-style E-commerce Platform  
+# ✨ PookieShop – Aesthetic E-commerce Platform  
 
 <p align="center">
-  <img src="demo.gif" width="700" alt="Quick Demo" />
+  <img src="demo.mp4" width="750" alt="Live Demo" />
 </p>
 
 ---
 
-## 📖 Overview  
-✨ An aesthetic and modern e-commerce platform inspired by Myntra.  
-🛒 Features cart, wishlist, and smooth user experience with animations.  
-⚡ Built using MERN stack with Tailwind CSS for styling.  
+## 💖 About  
+🛍️ A modern and aesthetic e-commerce platform with smooth UI/UX.  
+🎨 Cute design, fast experience, and built with love.  
+⚡ Tech-focused on performance and clean architecture.  
 
 ---
 
-## 🚀 Features  
-✅ User Authentication (Login/Signup)  
-✅ Product Listings with Filters  
-✅ Shopping Cart + Wishlist  
-✅ Responsive Cute UI/UX  
+## 🌟 Features  
+- 🎀 Beautiful & responsive design  
+- 🛒 Product browsing with filters  
+- 💖 Wishlist + Cart management  
+- 🔑 Secure authentication (Login/Signup)  
+- 🚀 Fast and lightweight experience  
 
 ---
 
 ## 🛠️ Tech Stack  
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=react,nodejs,mongodb,express,tailwind,git,github,vscode" />
+</p>
 
+---
+
+## 🎥 Demo  
+<p align="center">
+  <img src="demo.gif" width="700" alt="Demo Video" />
+</p>
+
+---
 ---
 
 ## 📬 Contact  
@@ -39,14 +47,8 @@
 
 Made with ❤️ by **Bhawna**
 
----
 
-## 📹 Demo Video  
-[▶ Watch Full Demo](demo.mp4)  
-
----
-
-## 🖥️ Installation  
+## ⚡ Installation  
 ```bash
 git clone https://github.com/bhawnapannu2701/PookieShop.git
 cd PookieShop
