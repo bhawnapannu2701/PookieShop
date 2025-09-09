@@ -39,9 +39,3 @@ Made with ❤️ by **Bhawna**
 
 ---
 
-## ⚡ Installation  
-```bash
-git clone https://github.com/bhawnapannu2701/PookieShop.git
-cd PookieShop
-npm install
-npm start
