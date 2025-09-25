@@ -1,27 +1,47 @@
 // client/src/api.js
 
-// Prefer env var; warna Render backend par fallback (no trailing slash)
+// Prefer env var; otherwise fallback to Render backend (no trailing slash)
 const API_BASE =
   (import.meta.env.VITE_API_BASE && import.meta.env.VITE_API_BASE.replace(/\/+$/, "")) ||
   "https://pookieshop-1.onrender.com";
 
+// helper: build URL with query params safely
+function withParams(base, params = {}) {
+  const url = new URL(base);
+  Object.entries(params).forEach(([k, v]) => {
+    if (v !== undefined && v !== null && v !== "") url.searchParams.set(k, v);
+  });
+  return url.toString();
+}
+
 /* ---------- Products ---------- */
+// existing name (hits /api/products/raw)
 export async function getProducts(page = 0, size = 12) {
-  const res = await fetch(`${API_BASE}/api/products/raw?page=${page}&size=${size}`);
+  const res = await fetch(withParams(`${API_BASE}/api/products/raw`, { page, size }));
   if (!res.ok) throw new Error("Failed to load products");
   return res.json();
 }
-export async function searchProducts({ q = "", category = "", sort = "reco", page = 0, size = 12 } = {}) {
-  const params = new URLSearchParams();
-  if (q) params.set("q", q);
-  if (category) params.set("category", category);
-  if (sort) params.set("sort", sort);
-  params.set("page", page);
-  params.set("size", size);
-  const res = await fetch(`${API_BASE}/api/products?` + params.toString());
+
+// ✅ add the named export ShopAll.jsx expects
+// Accept BOTH: getProductsRaw(0, 12)  OR  getProductsRaw({ page: 0, size: 12 })
+export async function getProductsRaw(a = 0, b = 12) {
+  if (typeof a === "object" && a !== null) {
+    const { page = 0, size = 12 } = a;
+    return getProducts(page, size);
+  }
+  return getProducts(a, b);
+}
+
+export async function searchProducts(
+  { q = "", category = "", sort = "reco", page = 0, size = 12 } = {}
+) {
+  const res = await fetch(
+    withParams(`${API_BASE}/api/products`, { q, category, sort, page, size })
+  );
   if (!res.ok) throw new Error("Failed to search products");
   return res.json();
 }
+
 export async function getProductDetails(id) {
   const res = await fetch(`${API_BASE}/api/products/${id}`);
   if (!res.ok) throw new Error("Not found");
@@ -121,4 +141,5 @@ export async function adminDeleteProduct(id, token) {
   return res.json();
 }
 
+// keep default export unchanged
 export default API_BASE;
